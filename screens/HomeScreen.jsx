@@ -17,11 +17,11 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.ViewStyle}>
             <Text style={styles.HelloText}>Welcome Back</Text>
             <ScrollView>
-                <Pressable onPress={() => Alert.alert('Sorry, for the delay')} style={styles.button}>
+                <Pressable onPress={() => navigation.navigate('DiscoverScreen')} style={styles.button}>
                      <EventList events={events.filter((event) => event.id === 1)}/>
                 </Pressable>
 
-                <Pressable onPress={() => Alert.alert('Error Page not found')}>
+                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
                      <EventList events={events.filter((event) => event.page === 'home')}/>
                 </Pressable>
             </ScrollView>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         flex: 1, 
         padding: 20, 
         backgroundColor: '#f1f2f4',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     HelloText: {
         fontSize: 30,

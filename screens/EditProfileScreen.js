@@ -33,7 +33,7 @@ const EditProfileScreen = ({ navigation }) => {
                 valid={validUsername}
                 setValid={setValidUsername}
             />
-            <Button title='Update' onPress={() => Alert.alert("Currently unable to update profile")} />
+            <Button title='Update' onPress={() => navigation.navigate('HomeScreen')} />
         </View>
     );
 }
