@@ -26,7 +26,7 @@ const Screen1 = ({ navigation }: { navigation: any }) => {
 
     return (
         <View style={styles.container}>
-            <Text>Start a new discussion with your fellow colleagues!</Text>
+            <Text>Start a new discussion with your fellow colleagues!!</Text>
 
             <TextInput placeholder="Chatroom name"
                 style={styles.input}
