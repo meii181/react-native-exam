@@ -48,9 +48,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    borderBlack: {
-        //border: '1px solid #000'
-    },
+
+    
     item: {
         backgroundColor: '#f9c2ff',
         padding: 20,

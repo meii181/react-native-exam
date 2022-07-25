@@ -24,7 +24,7 @@ export const fetchChatrooms = () => {
         const idToken = getState().user.idToken
 
         const response = await fetch(
-            'https://reactclass-83590-default-rtdb.europe-west1.firebasedatabase.app/chatrooms.json?auth='
+            'https://react-native-exam-793df-default-rtdb.europe-west1.firebasedatabase.app//chatrooms.json?auth='
             + idToken, {
 
             method: 'GET',
@@ -34,10 +34,9 @@ export const fetchChatrooms = () => {
         });
 
 
-        const data = await response.json(); // json to javascript
+        const data = await response.json();
         console.log(data);
         if (!response.ok) {
-            //There was a problem..
         } else {
 
             let chatrooms = [];
@@ -53,20 +52,17 @@ export const fetchChatrooms = () => {
 
 export const addChatroom = (chatroomName: string) => {
     return async (dispatch: any, getState: any) => {
-        // const msg: Chatmessage = new Chatmessage('Hello', new Date()); //example of using typescript
         const idToken = getState().user.idToken
 
         const response = await fetch(
-            'https://reactclass-83590-default-rtdb.europe-west1.firebasedatabase.app/chatrooms.json?auth='
+            'https://react-native-exam-793df-default-rtdb.europe-west1.firebasedatabase.app/chatrooms.json?auth='
             + idToken, {
 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ //javascript to json
-                //key value pairs of data you want to send to server
-                // ...
+            body: JSON.stringify({ 
                 chatroomName
             })
         });
@@ -75,7 +71,6 @@ export const addChatroom = (chatroomName: string) => {
         const data = await response.json(); // json to javascript
         console.log(data);
         if (!response.ok) {
-            //There was a problem..
         } else {
             dispatch({ type: ADD_CHATROOM, payload: { chatroomName, id: data.name } })
         }
@@ -87,7 +82,7 @@ export const deleteChatroom = (id: string) => {
         let idToken: string = getState().user.idToken
 
         const response = await fetch(
-            'https://reactclass-83590-default-rtdb.europe-west1.firebasedatabase.app/chatrooms/' + id + '.json/?auth='
+            'https://react-native-exam-793df-default-rtdb.europe-west1.firebasedatabase.app/chatrooms/' + id + '.json/?auth='
             + idToken, {
 
             method: 'DELETE',
@@ -100,7 +95,6 @@ export const deleteChatroom = (id: string) => {
         const data = await response.json(); // json to javascript
         console.log(data);
         if (!response.ok) {
-            //There was a problem..
         } else {
             dispatch({ type: DELETE_CHATROOM, payload: id })
         }

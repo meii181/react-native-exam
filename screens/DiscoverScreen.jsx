@@ -1,29 +1,34 @@
 
 import { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Button, Alert, Pressable, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Button, Alert, Pressable, ScrollView, Image, ImageBackground} from 'react-native';
 import EventList from './list';
+
 const DiscoverScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
 
           <ScrollView>
-            <View style={styles.SubView}>
+
+            <ImageBackground source={require("../assets/events.jpg")} style={styles.SubView}>
+              <ImageBackground style={styles.overlay} />
                 <Pressable onPress={() => navigation.navigate('Events')}>
                 <Text style={styles.ViewText}>All Events</Text>
                 </Pressable>
-            </View>
+            </ImageBackground>
 
-            <View style={styles.SubView2}>
+            <ImageBackground source={require("../assets/blog.jpg")} style={styles.SubView2}>
+            <ImageBackground style={styles.overlay1} />
               <Pressable onPress={() => navigation.navigate('Student Organisations')}>
                 <Text style={styles.ViewText}> Student Organisations</Text>
               </Pressable>  
-            </View>
+            </ImageBackground>
 
-            <View style={styles.SubView3}>
+            <ImageBackground source={require("../assets/organisations.jpg")} style={styles.SubView3}>
+            <ImageBackground style={styles.overlay2} />
               <Pressable onPress={() => Alert.alert('Error page not found')}>
                 <Text style={styles.ViewText}>All Posts</Text>  
               </Pressable>
-            </View>         
+            </ImageBackground>         
 
 
           </ScrollView>
@@ -38,46 +43,67 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: "#E6E8E6"
+        backgroundColor: "#f1f2f4",
       },
+
       Title: {
         color: "#5E239D",
         fontSize: 20,
-        fontWeight: "bold"
+        fontWeight: "bold",
       },
+
       SubView: {
-        backgroundColor: "#2F97C1",
-        height: 90,
-        width: "100%",
-        padding: 15,
+        height: 140,
+        width: "110%",
+        padding: 20,
         marginTop: 8,
-        borderRadius: 5,
       },
+
+      overlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: "purple",
+        opacity: .5,
+      },
+
       ViewText: {
         marginTop: 9,
         paddingVertical: 8,
-        color: "#20232a",
+        paddingEnd: 30,
+        color: "whitesmoke",
         textAlign: "center",
         fontSize: 30,
         fontWeight: "bold",
         fontStyle: "italic",
       },
+
       SubView2: {
-        backgroundColor: "#0B6E4F",
-        height: 90,
-        width: "100%",
-        padding: 15,
-        marginTop: 20,
-        borderRadius: 5,
+        height: 140,
+        width: "110%",
+        padding: 20,
+        marginTop: 30,
       },
+
+      overlay1: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: "#2d304c",
+        opacity: .5,
+      },
+
+
       SubView3: {
-        backgroundColor: "#EF767A",
-        height: 90,
-        width: "100%",
-        padding: 15,
-        marginTop: 20,
-        borderRadius: 5,
+        height: 140,
+        width: "110%",
+        padding: 20,
+        marginTop: 30,
       },
+
+      overlay2: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: "#2f3b25",
+        opacity: .5,
+      },
+
+
       input: {
         height: 40,
         margin: 12,

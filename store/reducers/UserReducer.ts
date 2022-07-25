@@ -10,7 +10,7 @@ export interface UserState {
 const initialState: UserState = {
     idToken: undefined,
     email: undefined,
-    username: 'fucking hate this shit'
+    username: 'insert_username'
 };
 
 export interface Action {

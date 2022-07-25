@@ -5,19 +5,19 @@ import { useState } from 'react';
 const HomeScreen = ({ navigation }) => {
 
     const [events] = useState([
-        {title: "School News", id: 1, page: "main", subTexts: "The reopen of Monkey Bar... click to read more"},
-        {title: "Lorem ipsum", id: 2, page: "home", subTexts: "Lorem ipsum dolor sit amet"},
-        {title: "Dolor Sit", id: 3, page: "home", subTexts: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-        {title: "Aenean iaculis", id: 4, page: "home", subTexts: "Consectetur adipiscing elit."},
-        {title: "Mauris vulputate", id: 5, page: "home", subTexts: "Nunc scelerisque mi vitae dictum."},
-        {title: "Proin commodo", id: 6, page: "home", subTexts: "Sed volutpat quam massa, et."},
+        {title: "Christmas with CBS Yoga", id: 1, page: "main", subTexts: "CBS Yoga"},
+        {title: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nanumy eirmad tempar", id: 2, page: "home", subTexts: "Example of subtext"},
+        {title: "CBS Film presents - Ghost World", id: 3, page: "home", subTexts: "CBS Film"},
+        {title: "CBS Dismission", id: 4, page: "home", subTexts: "Congratulations to the CBS graduates!"},
+        {title: "CBS Art of Cisternerne", id: 5, page: "home", subTexts: "CBS Art"},
+        {title: "CBS Gin Podcast EP7", id: 6, page: "home", subTexts: "The 7th episode of CBS Gin Podcast: A gin-gin situation"},
       ]);
 
     return (
         <View style={styles.ViewStyle}>
             <Text style={styles.HelloText}>Welcome Back</Text>
             <ScrollView>
-                <Pressable onPress={() => Alert.alert('Sorry, for the delay')}>
+                <Pressable onPress={() => Alert.alert('Sorry, for the delay')} style={styles.button}>
                      <EventList events={events.filter((event) => event.id === 1)}/>
                 </Pressable>
 
@@ -34,13 +34,13 @@ const styles = StyleSheet.create({
     ViewStyle: {
         flex: 1, 
         padding: 20, 
-        backgroundColor: '#E6E8E6',
+        backgroundColor: '#f1f2f4',
         alignItems: 'center'
     },
     HelloText: {
         fontSize: 30,
         fontWeight: "bold",
-        textDecorationLine: 'underline',
+        textDecorationLine: 'none',
         paddingBottom: 5,
     }  
 })

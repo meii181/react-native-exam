@@ -9,18 +9,11 @@ const SignupScreen = ({ navigation }) => {
     const [password, setPassword] = useState('')
     const dispatch = useDispatch()
 
-    // const token = useSelector(state => state.user.idToken)
-    // const emailTest = useSelector(state => state.user.email)
-    // console.log(token);
-    // console.log(emailTest);
-
     async function load() {
         let emailFromSecureStore = await SecureStore.getItemAsync('email');
         let tokenFromSecureStore = await SecureStore.getItemAsync('token');
         if (emailFromSecureStore && tokenFromSecureStore) {
             console.log("success", emailFromSecureStore);
-
-            // dispatch(restoreUser(emailFromSecureStore, tokenFromSecureStore));
 
         } else {
             console.log("failure");
@@ -34,7 +27,6 @@ const SignupScreen = ({ navigation }) => {
 
     return (
         <View style={styles.ViewStyle}>
-            {/* <Text>Signup</Text> */}
             <TextInput placeholder='Email'
                 onChangeText={setEmail}
                 value={email} 
@@ -44,11 +36,6 @@ const SignupScreen = ({ navigation }) => {
                 onChangeText={setPassword}
                 value={password} 
                 style={styles.loginText}/>
-
-            {/* <Button  
-            title="Signup" 
-            onPress={() => dispatch(signup(email, password))} 
-            style={styles.buttonStyle} /> */}
 
             <View style={styles.gap}>
 
@@ -61,9 +48,6 @@ const SignupScreen = ({ navigation }) => {
             <Text style={styles.text}>Login Instead</Text>
             </Pressable> 
 
-            
-    
-            {/* <Button title="Login Instead" onPress={() => navigation.navigate("Login")} /> */}
         </View>
     );
 }

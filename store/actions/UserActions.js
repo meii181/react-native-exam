@@ -19,23 +19,20 @@ export const restoreUser = (email, token) => {
 
 export const signup = (email, password) => {
     return async dispatch => {
-        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD-AEZQF5g4GW5FeFcPdIfbaXUg2b5IGOI', {
+        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD4WoyzG6c3m3g4CZlXULVVz3Znn1chHIk', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ //javascript to json
-                //key value pairs of data you want to send to server
-                // ...
+            body: JSON.stringify({ 
                 email: email,
                 password: password,
                 returnSecureToken: true
             })
         });
 
-        // console.log(await response.json());
 
-        const data = await response.json(); // json to javascript
+        const data = await response.json();
         console.log(data);
         if (!response.ok) {
             Alert.alert("There was a issue with signing in ")
@@ -49,23 +46,20 @@ export const signup = (email, password) => {
 
 export const login = (email, password) => {
     return async dispatch => {
-        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD-AEZQF5g4GW5FeFcPdIfbaXUg2b5IGOI', {
+        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD4WoyzG6c3m3g4CZlXULVVz3Znn1chHIk', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ //javascript to json
-                //key value pairs of data you want to send to server
-                // ...
+            body: JSON.stringify({ 
                 email: email,
                 password: password,
                 returnSecureToken: true
             })
         });
 
-        // console.log(await response.json());
 
-        const data = await response.json(); // json to javascript
+        const data = await response.json();
         console.log(data);
         if (!response.ok) {
             Alert.alert("There was a issue with logging in ")

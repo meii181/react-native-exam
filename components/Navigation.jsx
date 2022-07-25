@@ -12,7 +12,6 @@ import LoginScreen from "./../screens/LoginScreen";
 import ProfileScreen from "./../screens/ProfileScreen";
 import EditProfileScreen from "./../screens/EditProfileScreen";
 import EventScreen from "./../screens/EventScreen";
-import Screen4 from "./../screens/Screen4";
 import { NavigationContainer } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
@@ -26,7 +25,7 @@ const NavigationComponent = ({ navigation }) => {
     return (
         <NavigationContainer >
             {token !== undefined ? (
-                // Show the app with all navigation
+
                 <Tab.Navigator>
                     <Tab.Screen name="Home" component={HomeScreen} />
                     <Tab.Screen name="Discover" component={DiscoverStack}/>
@@ -34,7 +33,7 @@ const NavigationComponent = ({ navigation }) => {
                     <Tab.Screen name="Menu" component={MenuStack} />
                 </Tab.Navigator>
             ) : (
-                // show a stack navigator with only signup and login screens.
+
                 <Stack.Navigator>
                     <Stack.Screen name="Signup" component={SignupScreen} />
                     <Stack.Screen name="Login" component={LoginScreen} />
@@ -49,7 +48,7 @@ function MenuStack() {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Profile" component={ProfileScreen}></Stack.Screen>
-            <Stack.Screen name="EditProfile" component={EditProfileScreen}></Stack.Screen>
+            <Stack.Screen name="Edit Profile" component={EditProfileScreen}></Stack.Screen>
         </Stack.Navigator>
     )
 }
@@ -57,8 +56,7 @@ function MenuStack() {
 function ChatStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Add Facts" component={Screen1} />
-            <Stack.Screen name="Screen4" component={Screen4} />
+            <Stack.Screen name="Add Chatroom" component={Screen1} />
         </Stack.Navigator>
     );
 }
@@ -67,7 +65,7 @@ function ChatStack() {
 function DiscoverStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Disover" component={DiscoverScreen} />
+            <Stack.Screen name="Discover" component={DiscoverScreen} />
             <Stack.Screen name="Events" component={EventScreen} />
             <Stack.Screen name="Student Organisations" component={Screen3} />
             <Stack.Screen name="My Organisations" component={Screen2} />
