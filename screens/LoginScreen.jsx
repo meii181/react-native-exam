@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, Alert, Pressable } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Pressable } from 'react-native';
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { restoreUser, login } from './../store/actions/UserActions'
@@ -31,6 +31,11 @@ const LoginScreen = ({ navigation }) => {
 
     return (
         <View style={styles.ViewStyle}>
+
+            <View style={styles.loginStyle}>
+                <Text style={styles.textLogin}>
+                    Here you can login if you already have an account.
+                </Text>
             <TextInput placeholder='Email'
                 onChangeText={setEmail}
                 value={email} 
@@ -40,43 +45,58 @@ const LoginScreen = ({ navigation }) => {
                 onChangeText={setPassword}
                 value={password} 
                 style={styles.loginText}/>
+                </View>
 
-            <View style={styles.gap}>
-
-            </View>
             <Pressable style={styles.buttonStyle} onPress={() => dispatch(login(email, password))}>
-            <Text style={styles.text}>Log in</Text>
+            <Text style={styles.text}>Login</Text>
             </Pressable>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+
     ViewStyle: {
         flex: 1,
         padding: 20,
         backgroundColor: "#f1f2f4",
-        alignItems: 'center'
     },
+
+    loginStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 50
+    },
+
+    textLogin: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 18,
+        marginBottom: 25
+    },
+
+
     loginText: {
-        width: "100%",
-        backgroundColor: "#CDD3CE",
-        marginBottom: 5,
-        height: 25,
+        width: "80%",
+        backgroundColor: "#dcdcdc",
+        paddingLeft: 8,
+        marginBottom: 10,
+        height: 40,
+        fontWeight: 'bold'
     },
-    gap: {
-        margin: 25
-    },
+
     buttonStyle: {
         backgroundColor: "#384E77",
-        alignItems: 'center',
-        justifyContent: 'center',
         paddingVertical: 12,
-        paddingHorizontal: 32,
+        paddingHorizontal: 34,
         borderRadius: 4,
         elevation: 3,
-        marginBottom: 5
+        marginTop: 20,
+        width: '30%',
+        justifyContent: 'center',
+        alignSelf: 'center'
     },
+
     text: {
         fontSize: 16,
         lineHeight: 21,

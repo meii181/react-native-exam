@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Button, StyleSheet, Pressable } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native';
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { restoreUser, signup } from './../store/actions/UserActions'
@@ -26,7 +26,14 @@ const SignupScreen = ({ navigation }) => {
 
 
     return (
+
         <View style={styles.ViewStyle}>
+            <View style={styles.loginStyle}>
+
+            <Text style={styles.welcomeText}>
+                Welcome, please log into your account or create a new account.
+            </Text>
+
             <TextInput placeholder='Email'
                 onChangeText={setEmail}
                 value={email} 
@@ -36,48 +43,71 @@ const SignupScreen = ({ navigation }) => {
                 onChangeText={setPassword}
                 value={password} 
                 style={styles.loginText}/>
+                </View>
+                
 
-            <View style={styles.gap}>
-
-            </View>
+            <View style={styles.buttonContainer}>
             <Pressable style={styles.buttonStyle} onPress={() => dispatch(signup(email, password))}>
             <Text style={styles.text}>Signup</Text>
             </Pressable>
 
             <Pressable style={styles.buttonStyle} onPress={() => navigation.navigate("Login")}>
-            <Text style={styles.text}>Login Instead</Text>
+            <Text style={styles.text}>Login</Text>
             </Pressable> 
-
-        </View>
+            </View>
+            </View>
+        
     );
 }
 
 const styles = StyleSheet.create({
+
     ViewStyle: {
         flex: 1,
         padding: 20,
-        backgroundColor: "#E6E8E6",
+        backgroundColor: "#f1f2f4"
+    },
+
+    loginStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 50
+    },
+
+    welcomeText: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 25,
+        fontSize: 18
+    },
+
+    loginText: {
+        width: "80%",
+        height: 40,
+        paddingLeft: 8,
+        backgroundColor: "#dcdcdc",
+        marginBottom: 10,
+        fontWeight: 'bold'
+        
+    }, 
+
+    buttonContainer: {
+        marginTop: 25,
+        flexDirection: 'row',
+        justifyContent: 'center',
         alignItems: 'center'
     },
-    loginText: {
-        width: "100%",
-        backgroundColor: "#CDD3CE",
-        marginBottom: 5,
-        height: 25,
-    }, 
-    gap: {
-        margin: 25
-    },
+
     buttonStyle: {
         backgroundColor: "#384E77",
-        alignItems: 'center',
-        justifyContent: 'center',
         paddingVertical: 12,
         paddingHorizontal: 32,
         borderRadius: 4,
         elevation: 3,
-        marginBottom: 5
+        marginLeft: 15,
+        marginRight: 15
     },
+
     text: {
         fontSize: 16,
         lineHeight: 21,
@@ -86,4 +116,5 @@ const styles = StyleSheet.create({
         color: 'white',
       },
 })
+
 export default SignupScreen;
