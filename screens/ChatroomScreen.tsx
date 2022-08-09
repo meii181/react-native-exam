@@ -26,14 +26,16 @@ const Screen1 = ({ navigation }: { navigation: any }) => {
 
     return (
         <View style={styles.container}>
-            <Text>Start a new discussion with your fellow colleagues!!</Text>
+            <Text style={styles.textStyle}>Start a new discussion with your fellow colleagues!</Text>
 
             <TextInput placeholder="Chatroom name"
                 style={styles.input}
                 onChangeText={onChangeText}
                 value={text} />
 
-            <Button title='Add Chatroom' onPress={() => dispatch(addChatroom(text))} />
+            <View style={styles.buttonStyle}>
+            <Button color='#384E77' title='Add a Chat Room' onPress={() => dispatch(addChatroom(text))} />
+            </View>
 
             <FlatList data={chatrooms} renderItem={renderItem} />
         </View>
@@ -41,17 +43,28 @@ const Screen1 = ({ navigation }: { navigation: any }) => {
 }
 
 const styles = StyleSheet.create({
+
     input: {
         height: 40,
         margin: 12,
-        borderWidth: 1,
         padding: 10,
+        backgroundColor: '#dcdcdc'
     },
+
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: "#f1f2f4"
+        backgroundColor: "#f1f2f4",
+        marginTop: 30
     },
+
+    textStyle: {
+        textAlign: 'center',
+        marginBottom: 20,
+        fontWeight: 'bold'
+
+    },
+
     viewStyle: {
         backgroundColor: '#FFAF87',
         flex: 1,
@@ -59,10 +72,18 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         borderRadius: 5,
     },
+
     Viewtext: {
         textAlign: 'center',
         fontSize: 18,
         fontWeight: '600'
+    },
+
+    buttonStyle: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 
 });

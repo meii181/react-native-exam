@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable, Alert, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Pressable, ImageBackground, ScrollView } from 'react-native';
 import EventList from './list';
 import { useState } from 'react';
 
@@ -6,7 +6,7 @@ const HomeScreen = ({ navigation }) => {
 
     const [events] = useState([
         {title: "Christmas with CBS Yoga", id: 1, page: "main", subTexts: "CBS Yoga"},
-        {title: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nanumy eirmad tempar", id: 2, page: "home", subTexts: "Example of subtext"},
+        {title: "Coffee Talk", id: 2, page: "home", subTexts: "Time for a coffee talk!"},
         {title: "CBS Film presents - Ghost World", id: 3, page: "home", subTexts: "CBS Film"},
         {title: "CBS Dismission", id: 4, page: "home", subTexts: "Congratulations to the CBS graduates!"},
         {title: "CBS Art of Cisternerne", id: 5, page: "home", subTexts: "CBS Art"},
@@ -15,15 +15,51 @@ const HomeScreen = ({ navigation }) => {
 
     return (
         <View style={styles.ViewStyle}>
-            <Text style={styles.HelloText}>Welcome Back</Text>
+            <Text style={styles.HelloText}>Welcome dear student!</Text>
+
             <ScrollView>
-                <Pressable onPress={() => navigation.navigate('DiscoverScreen')} style={styles.button}>
+                <ImageBackground source={require("../assets/christmas.jpg")} style={styles.image1} imageStyle={{borderRadius: 8}}>
+                <ImageBackground style={styles.overlay} />
+                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
                      <EventList events={events.filter((event) => event.id === 1)}/>
                 </Pressable>
+                </ImageBackground>
 
+                <ImageBackground source={require("../assets/coffee-talk.jpg")} style={styles.image2} imageStyle={{borderRadius: 8}}>
+                <ImageBackground style={styles.overlay} />
                 <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
-                     <EventList events={events.filter((event) => event.page === 'home')}/>
+                     <EventList events={events.filter((event) => event.id === 2)}/>
                 </Pressable>
+                </ImageBackground>
+
+                <ImageBackground source={require("../assets/ghost-town.jpg")} style={styles.image2} imageStyle={{borderRadius: 8}}>
+                <ImageBackground style={styles.overlay} />
+                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
+                     <EventList events={events.filter((event) => event.id === 3)}/>
+                </Pressable>
+                </ImageBackground>
+
+                <ImageBackground source={require("../assets/graduate.jpg")} style={styles.image2} imageStyle={{borderRadius: 8}}>
+                <ImageBackground style={styles.overlay} />
+                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
+                     <EventList events={events.filter((event) => event.id === 4)}/>
+                </Pressable>
+                </ImageBackground>
+
+                <ImageBackground source={require("../assets/art-of-cisternerne.jpg")} style={styles.image2} imageStyle={{borderRadius: 8}}>
+                <ImageBackground style={styles.overlay} />
+                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
+                     <EventList events={events.filter((event) => event.id === 5)}/>
+                </Pressable>
+                </ImageBackground>
+
+                <ImageBackground source={require("../assets/podcast.jpg")} style={styles.image2} imageStyle={{borderRadius: 8}}>
+                <ImageBackground style={styles.overlay} />
+                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
+                     <EventList events={events.filter((event) => event.id === 6)}/>
+                </Pressable>
+                </ImageBackground>
+
             </ScrollView>
 
         </View>
@@ -34,14 +70,36 @@ const styles = StyleSheet.create({
     ViewStyle: {
         flex: 1, 
         padding: 20, 
+        margin: 5,
         backgroundColor: '#f1f2f4',
         alignItems: 'center',
+        marginTop: 20
     },
+
     HelloText: {
         fontSize: 30,
         fontWeight: "bold",
-        textDecorationLine: 'none',
         paddingBottom: 5,
-    }  
+    },
+
+    image1: {
+        marginTop: 30,
+        width: '100%',
+        height: 140,
+    },
+
+    image2: {
+        marginTop: 30,
+        width: '100%',
+        height: 140,
+    },
+
+    overlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: '#6a5acd',
+        opacity: .7,
+        borderRadius: 8,
+
+    }
 })
 export default HomeScreen;

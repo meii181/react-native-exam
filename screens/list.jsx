@@ -6,7 +6,7 @@ return (
     <View>
       {events.map(event => (
         <View style={styles.SubView}>
-          <Text style={styles.ViewText} key={event.title}>{event.title }</Text>
+          <Text style={styles.ViewText} key={event.title}>{event.title}</Text>
           <Text style={styles.SubText} key={event.subTexts}>{event.subTexts}</Text>
         </View>
       ))}
@@ -15,30 +15,27 @@ return (
 }
 
 const styles = StyleSheet.create({
+
     SubView: {
-        backgroundColor: "#D0A5C0",
-        height: 150,
-        width: "100%",
-        padding: 15,
-        marginTop: 30,
-        borderRadius: 5,
+        padding: 5,
+        marginTop: 12,
+        borderRadius: 5
     },
+
     ViewText: {
-        marginTop: 10,
         paddingVertical: 8,
-        color: "#20232a",
+        color: "whitesmoke",
         textAlign: "center",
-        fontSize: 30,
-        fontWeight: "bold",
-        fontStyle: "italic",
+        fontSize: 27,
+        fontWeight: "bold"
     },
+
     SubText: {
-        marginTop: 25,
-        paddingVertical: 8,
-        color: "#20232a",
+        marginTop: 7,
+        color: "whitesmoke",
         fontSize: 15,
-        fontStyle: "italic",
-    },
+        textAlign: 'center'
+    }
 })
 
 export default EventList;

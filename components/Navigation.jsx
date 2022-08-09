@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, StyleSheet } from 'react-native';
-import Screen1 from "./../screens/Screen1";
+import Screen1 from "../screens/ChatroomScreen";
 import Screen2 from "./../screens/Screen2";
 import Screen3 from "./../screens/Screen3";
 import MenuScreen from "./../screens/MenuScreen";
