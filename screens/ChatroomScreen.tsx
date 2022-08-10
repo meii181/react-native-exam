@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../App';
 import { add, addChatroom, deleteChatroom, fetchChatrooms, subtract, toggleHappy } from '../store/actions/ChatActions';
 
-const Screen1 = ({ navigation }: { navigation: any }) => {
+const ChatroomScreen = ({ navigation }: { navigation: any }) => {
     const [text, onChangeText] = useState('');
 
     const dispatch = useDispatch();
@@ -88,4 +88,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Screen1;
+export default ChatroomScreen;

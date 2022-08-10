@@ -1,4 +1,4 @@
-import { View, Text, Button, StyleSheet, Pressable, Alert } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Alert } from 'react-native';
 
 const EventScreen = () => {
 
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: "#f1f2f4"
       },
+      
       Title: {
         color: "#5E239D",
         fontSize: 20,
@@ -45,15 +46,16 @@ const styles = StyleSheet.create({
         marginTop: 8,
         borderRadius: 5,
       },
+
       ViewText: {
-        marginTop: 9,
-        paddingVertical: 8,
-        color: "#20232a",
+        paddingTop: 8,
+        paddingLeft: 6,
+        color: "whitesmoke",
         textAlign: "center",
         fontSize: 30,
-        fontWeight: "bold",
-        fontStyle: "italic",
+        fontWeight: "bold"
       },
+
       SubView2: {
         backgroundColor: "#A88CE3",
         height: 90,
@@ -62,6 +64,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         borderRadius: 5,
       },
+
       SubView3: {
         backgroundColor: "#A88CE3",
         height: 90,
@@ -70,6 +73,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         borderRadius: 5,
       },
+
       input: {
         height: 40,
         margin: 12,

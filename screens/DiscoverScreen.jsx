@@ -9,21 +9,21 @@ const DiscoverScreen = ({ navigation }) => {
 
           <ScrollView>
 
-            <ImageBackground source={require("../assets/events.jpg")} style={styles.SubView} imageStyle={{borderRadius: 15}}>
+            <ImageBackground source={require("../assets/events.jpg")} style={styles.SubView} imageStyle={{borderRadius: 8}}>
               <ImageBackground style={styles.overlay} />
                 <Pressable onPress={() => navigation.navigate('Events')}>
                 <Text style={styles.ViewText1}>All Events</Text>
                 </Pressable>
             </ImageBackground>
 
-            <ImageBackground source={require("../assets/blog.jpg")} style={styles.SubView2} imageStyle={{borderRadius: 15}}>
+            <ImageBackground source={require("../assets/blog.jpg")} style={styles.SubView2} imageStyle={{borderRadius: 8}}>
             <ImageBackground style={styles.overlay1} />
               <Pressable onPress={() => navigation.navigate('Student Organisations')}>
                 <Text style={styles.ViewText2}> Student Organisations</Text>
               </Pressable>  
             </ImageBackground>
 
-            <ImageBackground source={require("../assets/organisations.jpg")} style={styles.SubView3} imageStyle={{borderRadius: 15}}>
+            <ImageBackground source={require("../assets/organisations.jpg")} style={styles.SubView3} imageStyle={{borderRadius: 8}}>
             <ImageBackground style={styles.overlay2} />
               <Pressable onPress={() => Alert.alert('Error page not found')}>
                 <Text style={styles.ViewText3}>All Posts</Text>  
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         backgroundColor: "purple",
         width: '100%',
         opacity: .5,
-        borderRadius: 15
+        borderRadius: 8
       },
 
       ViewText1: {
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: "#2d304c",
         opacity: .5,
-        borderRadius: 15
+        borderRadius: 8
       },
 
 
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: "#2f3b25",
         opacity: .5,
-        borderRadius: 15
+        borderRadius: 8
       },
 
 

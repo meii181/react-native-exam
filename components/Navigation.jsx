@@ -1,9 +1,9 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, StyleSheet } from 'react-native';
-import Screen1 from "../screens/ChatroomScreen";
-import Screen2 from "./../screens/Screen2";
-import Screen3 from "./../screens/Screen3";
+import ChatroomScreen from "../screens/ChatroomScreen";
+import MyOrganisations from "../screens/MyOrganisations";
+import Organisations from "../screens/OrganisationsScreen";
 import MenuScreen from "./../screens/MenuScreen";
 import HomeScreen from "./../screens/HomeScreen";
 import DiscoverScreen from "./../screens/DiscoverScreen"
@@ -56,7 +56,7 @@ function MenuStack() {
 function ChatStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Add Chatroom" component={Screen1} />
+            <Stack.Screen name="Add Chatroom" component={ChatroomScreen} />
         </Stack.Navigator>
     );
 }
@@ -67,8 +67,8 @@ function DiscoverStack() {
         <Stack.Navigator>
             <Stack.Screen name="Discover" component={DiscoverScreen} />
             <Stack.Screen name="Events" component={EventScreen} />
-            <Stack.Screen name="Student Organisations" component={Screen3} />
-            <Stack.Screen name="My Organisations" component={Screen2} />
+            <Stack.Screen name="Student Organisations" component={Organisations} />
+            <Stack.Screen name="My Organisations" component={MyOrganisations} />
         </Stack.Navigator>
     );
 }
