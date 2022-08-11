@@ -37,6 +37,8 @@ const ChatroomScreen = ({ navigation }: { navigation: any }) => {
             <Button color='#384E77' title='Add a Chat Room' onPress={() => dispatch(addChatroom(text))} />
             </View>
 
+            <View style={styles.line} />
+
             <FlatList data={chatrooms} renderItem={renderItem} />
         </View>
     );
@@ -84,6 +86,15 @@ const styles = StyleSheet.create({
         height: 50,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+
+    line: {
+        width: '83%',
+        height: 10,
+        marginLeft: 28,
+        borderBottomWidth: 1,
+        borderBottomColor: 'grey',
+        marginTop: 20
     }
 
 });

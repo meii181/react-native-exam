@@ -6,11 +6,9 @@ import chatReducer from './store/reducers/ChatReducer';
 import userReducer from "./store/reducers/UserReducer";
 import auth from '@react-native-firebase/auth';
 
-
 const rootReducer = combineReducers({
   chat: chatReducer,
   user: userReducer,
-  // events: eventReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>

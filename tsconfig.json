@@ -9,6 +9,8 @@
       "es2017"
     ],
     "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noEmit": true,
     "strict": true,
     "target": "esnext"

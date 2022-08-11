@@ -1,10 +1,11 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+// import { View, Text, StyleSheet } from 'react-native';
 import ChatroomScreen from "../screens/ChatroomScreen";
 import MyOrganisations from "../screens/MyOrganisations";
 import Organisations from "../screens/OrganisationsScreen";
-import MenuScreen from "./../screens/MenuScreen";
+import ProfileScreen from "./../screens/ProfileScreen";
 import HomeScreen from "./../screens/HomeScreen";
 import DiscoverScreen from "./../screens/DiscoverScreen"
 import SignupScreen from "./../screens/SignupScreen";
@@ -25,12 +26,31 @@ const NavigationComponent = ({ navigation }) => {
     return (
         <NavigationContainer >
             {token !== undefined ? (
+                <Tab.Navigator
+                screenOptions={({ route }) => ({
+                    tabBarIcon: ({ focused, color, size }) => {
+                        let iconName;
 
-                <Tab.Navigator>
+                        if (route.name === 'Home') {
+                            iconName = focused
+                            ? 'ios-information-circle'
+                            : 'ios-information-circle-outline';
+                        } else if (route.name === 'Settings') {
+                            iconName = focused ? 'ios-list-box' : 'ios-list';
+                        }
+
+                        return <Ionicons name={iconName} size={size} color={color} />;
+                    },
+
+                    tabBarActiveTintColor: 'indianred',
+                    tabBarInactiveTintColor: 'grey',
+
+                })}>
+
                     <Tab.Screen name="Home" component={HomeScreen} />
                     <Tab.Screen name="Discover" component={DiscoverStack}/>
                     <Tab.Screen name="Chat" component={ChatStack} />
-                    <Tab.Screen name="Menu" component={MenuStack} />
+                    <Tab.Screen name="Profile" component={ProfileStack} />
                 </Tab.Navigator>
             ) : (
 
@@ -44,7 +64,7 @@ const NavigationComponent = ({ navigation }) => {
 }
 
 
-function MenuStack() {
+function ProfileStack() {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Profile" component={ProfileScreen}></Stack.Screen>
@@ -56,7 +76,7 @@ function MenuStack() {
 function ChatStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Add Chatroom" component={ChatroomScreen} />
+            <Stack.Screen name="Chatroom" component={ChatroomScreen} />
         </Stack.Navigator>
     );
 }
