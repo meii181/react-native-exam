@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
-// import { View, Text, StyleSheet } from 'react-native';
+// import { Icon } from 'react-native-vector-icons';
+// import { View, Text } from 'react-native';
 import ChatroomScreen from "../screens/ChatroomScreen";
 import MyOrganisations from "../screens/MyOrganisations";
 import Organisations from "../screens/OrganisationsScreen";
@@ -10,7 +10,6 @@ import HomeScreen from "./../screens/HomeScreen";
 import DiscoverScreen from "./../screens/DiscoverScreen"
 import SignupScreen from "./../screens/SignupScreen";
 import LoginScreen from "./../screens/LoginScreen";
-import ProfileScreen from "./../screens/ProfileScreen";
 import EditProfileScreen from "./../screens/EditProfileScreen";
 import EventScreen from "./../screens/EventScreen";
 import { NavigationContainer } from '@react-navigation/native';
@@ -20,33 +19,12 @@ import { useSelector } from 'react-redux';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-
 const NavigationComponent = ({ navigation }) => {
     const token = useSelector(state => state.user.idToken)
     return (
         <NavigationContainer >
             {token !== undefined ? (
-                <Tab.Navigator
-                screenOptions={({ route }) => ({
-                    tabBarIcon: ({ focused, color, size }) => {
-                        let iconName;
-
-                        if (route.name === 'Home') {
-                            iconName = focused
-                            ? 'ios-information-circle'
-                            : 'ios-information-circle-outline';
-                        } else if (route.name === 'Settings') {
-                            iconName = focused ? 'ios-list-box' : 'ios-list';
-                        }
-
-                        return <Ionicons name={iconName} size={size} color={color} />;
-                    },
-
-                    tabBarActiveTintColor: 'indianred',
-                    tabBarInactiveTintColor: 'grey',
-
-                })}>
-
+                <Tab.Navigator>
                     <Tab.Screen name="Home" component={HomeScreen} />
                     <Tab.Screen name="Discover" component={DiscoverStack}/>
                     <Tab.Screen name="Chat" component={ChatStack} />

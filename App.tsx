@@ -2,12 +2,10 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import NavigationComponent from './components/Navigation';
-import chatReducer from './store/reducers/ChatReducer';
 import userReducer from "./store/reducers/UserReducer";
 import auth from '@react-native-firebase/auth';
 
 const rootReducer = combineReducers({
-  chat: chatReducer,
   user: userReducer,
 })
 

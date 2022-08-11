@@ -35,7 +35,7 @@ export const signup = (email, password) => {
         const data = await response.json();
         console.log(data);
         if (!response.ok) {
-            Alert.alert("There was a issue with signing in ")
+            Alert.alert("Unable to sign up, try again.")
         } else {
             await SecureStore.setItemAsync('email', data.email);
             await SecureStore.setItemAsync('token', data.idToken);
@@ -62,7 +62,7 @@ export const login = (email, password) => {
         const data = await response.json();
         console.log(data);
         if (!response.ok) {
-            Alert.alert("There was a issue with logging in ")
+            Alert.alert("Unable to log in, try again.")
         } else {
             await SecureStore.setItemAsync('email', data.email);
             await SecureStore.setItemAsync('token', data.idToken);
