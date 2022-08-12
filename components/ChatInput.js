@@ -13,6 +13,8 @@ function addChatRoom() {
     setEnteredChatRoom('');
 }
 
+// returning a code which is responsible of returning one single chatRoom
+
 return (
 <View style={styles.inputContainer}>
         <Text style={styles.textStyle}>Start a new discussion with your fellow colleagues!</Text>

@@ -1,11 +1,13 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
 
 function ChatList(props) {
     return(
+        <Pressable android_ripple={{color: '#b0c4de'}} onPress={props.onDeleteChat.bind(this, props.id)}>
         <View style={styles.chatroomContainer}>
-          <Text style={styles.chatRoomText}>{props.text}</Text>
+          <Text style={styles.chatRoomText}>{props.text}</Text> 
           <View style={styles.line} />
         </View>
+        </Pressable>
     );
 };
 
@@ -21,8 +23,7 @@ const styles = StyleSheet.create ({
         color: "#000000",
         fontWeight: 'bold',
         fontSize: 15,
-        paddingHorizontal: 20, //for left and right
-        paddingVertical: 25,
+        paddingHorizontal: 20,
         alignSelf: 'flex-start'
 
     },
