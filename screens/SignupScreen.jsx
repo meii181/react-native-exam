@@ -1,7 +1,7 @@
 import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native';
 import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { restoreUser, signup } from './../store/actions/UserActions'
+import { useDispatch } from 'react-redux';
+import { signup } from './../store/actions/UserActions'
 import * as SecureStore from 'expo-secure-store';
 
 const SignupScreen = ({ navigation }) => {
@@ -42,6 +42,7 @@ const SignupScreen = ({ navigation }) => {
             <TextInput placeholder='Password'
                 onChangeText={setPassword}
                 value={password} 
+                secureTextEntry={true}
                 style={styles.loginText}/>
                 </View>
                 

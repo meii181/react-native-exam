@@ -1,11 +1,11 @@
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, Pressable } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { logout } from '../store/actions/UserActions';
-import EditProfileScreen from './EditProfileScreen';
 
 
 const ProfileScreen = ({ navigation }) => {
-    const dispatch = useDispatch()
+
+    const dispatch = useDispatch();
 
     return (
         <View style={styles.container}>
@@ -16,7 +16,7 @@ const ProfileScreen = ({ navigation }) => {
 
             <View style={styles.buttonArea}>
             <View style={styles.buttonEdit}>
-            <Button color="#384E77" title="Edit Profile" onPress={() => navigation.navigate('EditProfileScreen')} component={EditProfileScreen} />
+            <Button color="#384E77" title="Edit Profile" onPress={() => navigation.navigate("EditProfile")} />
             </View>
             <View style={styles.buttonLogOut}>
             <Button color="#cd5c5c" title="Log out here" onPress={() => dispatch(logout())} />
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
 
     buttonEdit: {
         marginRight: 15,
-        marginLeft: 15
+        marginLeft: 15,
     },
 
     buttonLogOut: {

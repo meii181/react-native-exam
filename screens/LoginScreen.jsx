@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TextInput, Pressable } from 'react-native';
 import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { restoreUser, login } from './../store/actions/UserActions'
 import * as SecureStore from 'expo-secure-store';
 
@@ -43,7 +43,8 @@ const LoginScreen = ({ navigation }) => {
 
             <TextInput placeholder='Password'
                 onChangeText={setPassword}
-                value={password} 
+                value={password}
+                secureTextEntry={true}
                 style={styles.loginText}/>
                 </View>
 

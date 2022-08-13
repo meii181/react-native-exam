@@ -1,31 +1,17 @@
-import { View, Text, Button, StyleSheet} from 'react-native';
+import { View, Text, Pressable, StyleSheet} from 'react-native';
 import { useSelector } from 'react-redux';
-import Input from './../components/Input'
+import Input from '../components/Input'
 import { useState } from 'react';
 
-const EditProfileScreen = ({ navigation }) => {
+const EditProfileScreen = ({navigation}) => {
+
     const username = useSelector(state => state.user.email);
-    const [validUsername, setValidUsername] = useState(username !== '')
-
-    // const save = () => {
-    //     // ** if the "form" is valid ** {
-    //     // save data - we need access to text here...
-    //     //} else {
-    //     // display error message
-    //     //}
-    //     if (username & validUsername) {
-    //         Alert.alert("hello")
-    //     }
-
-
-    // }
+    const [validUsername, setValidUsername] = useState(username !== '');
 
     return (
         <View style={styles.container}>
             <Text style={styles.headingtext}>Your Email address</Text>
             <Text style={styles.subText}>{username}</Text>
-
-
             <Input
                 label="New Email"
                 inputValue="Please enter an email address"
@@ -33,7 +19,9 @@ const EditProfileScreen = ({ navigation }) => {
                 valid={validUsername}
                 setValid={setValidUsername}
             />
-            <Button title='Update' onPress={() => navigation.navigate('HomeScreen')} />
+            <Pressable onPress={() => navigation.navigate('HomePage')}>
+                <Text>Update</Text>
+            </Pressable>
         </View>
     );
 }
@@ -56,4 +44,5 @@ const styles = StyleSheet.create({
         paddingBottom: 8,
     }
 })
-export default EditProfileScreen;
+
+export default EditProfileScreen

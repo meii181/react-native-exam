@@ -20,42 +20,42 @@ const HomeScreen = ({ navigation }) => {
             <ScrollView>
                 <ImageBackground source={require("../assets/christmas.jpg")} style={styles.image1} imageStyle={{borderRadius: 8}}>
                 <ImageBackground style={styles.overlay} />
-                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
+                <Pressable onPress={() => navigation.navigate('cbsYoga')}>
                      <EventList events={events.filter((event) => event.id === 1)}/>
                 </Pressable>
                 </ImageBackground>
 
                 <ImageBackground source={require("../assets/coffee-talk.jpg")} style={styles.image2} imageStyle={{borderRadius: 8}}>
                 <ImageBackground style={styles.overlay} />
-                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
+                <Pressable onPress={() => navigation.navigate('Coffee')}>
                      <EventList events={events.filter((event) => event.id === 2)}/>
                 </Pressable>
                 </ImageBackground>
 
                 <ImageBackground source={require("../assets/ghost-town.jpg")} style={styles.image2} imageStyle={{borderRadius: 8}}>
                 <ImageBackground style={styles.overlay} />
-                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
+                <Pressable onPress={() => navigation.navigate('GhostTown')}>
                      <EventList events={events.filter((event) => event.id === 3)}/>
                 </Pressable>
                 </ImageBackground>
 
                 <ImageBackground source={require("../assets/graduate.jpg")} style={styles.image2} imageStyle={{borderRadius: 8}}>
                 <ImageBackground style={styles.overlay} />
-                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
+                <Pressable onPress={() => navigation.navigate('Graduation')}>
                      <EventList events={events.filter((event) => event.id === 4)}/>
                 </Pressable>
                 </ImageBackground>
 
                 <ImageBackground source={require("../assets/art-of-cisternerne.jpg")} style={styles.image2} imageStyle={{borderRadius: 8}}>
                 <ImageBackground style={styles.overlay} />
-                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
+                <Pressable onPress={() => navigation.navigate('Art')}>
                      <EventList events={events.filter((event) => event.id === 5)}/>
                 </Pressable>
                 </ImageBackground>
 
                 <ImageBackground source={require("../assets/podcast.jpg")} style={styles.image2} imageStyle={{borderRadius: 8}}>
                 <ImageBackground style={styles.overlay} />
-                <Pressable onPress={() => navigation.navigate('DiscoverScreen')}>
+                <Pressable onPress={() => navigation.navigate('Podcast')}>
                      <EventList events={events.filter((event) => event.id === 6)}/>
                 </Pressable>
                 </ImageBackground>

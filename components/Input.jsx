@@ -1,4 +1,4 @@
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { useState } from 'react';
 
 const Input = props => {
@@ -20,7 +20,7 @@ const Input = props => {
     }
 
     return (
-        <View>
+        <View style={styles.editProfile}>
             <Text>{props.label}</Text>
             <TextInput value={text} onChangeText={handleChangeText} onBlur={handleOnBlur} />
             {!props.valid && entered ? <Text>{props.error}</Text> : <></>}
@@ -29,3 +29,9 @@ const Input = props => {
 }
 
 export default Input;
+
+const styles = StyleSheet.create({
+    editProfile: {
+        marginTop: 20
+    }
+})

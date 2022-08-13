@@ -1,7 +1,4 @@
-
-import { useState } from 'react';
 import { View, Text, StyleSheet, Alert, Pressable, ScrollView, ImageBackground} from 'react-native';
-import EventList from './list';
 
 const DiscoverScreen = ({ navigation }) => {
     return (
