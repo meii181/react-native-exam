@@ -6,7 +6,7 @@ const HomeScreen = ({ navigation }) => {
 
     const [events] = useState([
         {title: "Christmas with CBS Yoga", id: 1, page: "main", subTexts: "CBS Yoga"},
-        {title: "Coffee Talk", id: 2, page: "home", subTexts: "Time for a coffee talk!"},
+        {title: "Coffee Talk", id: 2, page: "home", subTexts: "Have a coffee talk with your fellow students!"},
         {title: "CBS Film presents - Ghost World", id: 3, page: "home", subTexts: "CBS Film"},
         {title: "CBS Dismission", id: 4, page: "home", subTexts: "Congratulations to the CBS graduates!"},
         {title: "CBS Art of Cisternerne", id: 5, page: "home", subTexts: "CBS Art"},
