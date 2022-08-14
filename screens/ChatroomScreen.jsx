@@ -18,24 +18,8 @@ export default function ChatroomScreen({ navigation: { navigate }}) {
     function deleteChatRoom(id){
         setChatRoom(currentChatRoom => {
             return currentChatRoom.filter((chat) => chat.id !== id); // to check if chat has the id, 
-            // and if chat.id is not equal to receiving id.
-
-            // if there's match, if it has the looking id to remove, it will turn false, 
-            // which means the item will drop and a new array will no longer be continued
             
-            // this currentchat is an array, will create a new array,
-            // it will take a function which will return it as false or true
-
-            // if it's true, it will be kept, if it's false, it will be dropped.
         }); 
-        
-        //for updating the state, and it must be based on the old state, where it will take
-        // from the old state and remove, therefore I will pass a function to this updating state
-        
-        // => - returning the updated state
-        
-        // it will be a better solution to receive the deleting item's id, because
-        // this allows to uniquely identify the item and delete it
     }
    
     return (

@@ -2,18 +2,16 @@ import { View, Text, TextInput, StyleSheet, Button } from 'react-native';
 import { useState } from 'react';
 
 function ChatInput(props) {
-    const [enteredChatRoom, setEnteredChatRoom] = useState('');
+    const [enteredChatRoom, setEnteredChatRoom] = useState(''); 
 
 function chatInputHandler(enteredText) {
-    setEnteredChatRoom(enteredText);
+    setEnteredChatRoom(enteredText);  
 }
 
 function addChatRoom() {
     props.onAddChat(enteredChatRoom);
     setEnteredChatRoom('');
 }
-
-// returning a code which is responsible of returning one single chatRoom
 
 return (
 <View style={styles.inputContainer}>

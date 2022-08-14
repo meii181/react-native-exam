@@ -24,6 +24,7 @@ import { useSelector } from 'react-redux';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
 const homeName = 'Home';
 const discoverName = 'Discover';
 const chatName = 'Chat';
